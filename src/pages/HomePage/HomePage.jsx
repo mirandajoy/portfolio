@@ -18,9 +18,15 @@ import profile from "../../assets/profile.jpg";
 import scoreMockup from "../../assets/score-mockup.jpg";
 import learningClubMockup from "../../assets/learning-club-sq.jpg";
 import Header from "../../components/Header/Header";
+import { useEffect } from "react";
 import "./HomePage.scss";
 
 function HomePage() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Header bgColor="blue.500" color="gray.50" />
@@ -86,7 +92,7 @@ function HomePage() {
               <LinkBox>
                 <LinkOverlay as={Link} to="/learning-club">
                   <AspectRatio ratio={1}>
-                    <Image src={learningClubMockup} alt="Learning Club" objectFit="cover" />
+                    <Image src={learningClubMockup} alt="Learning Club" objectFit="cover" borderRadius="base" />
                   </AspectRatio>
                 </LinkOverlay>
               </LinkBox>
@@ -95,7 +101,7 @@ function HomePage() {
               <LinkBox>
                 <LinkOverlay as={Link} to="/the-score">
                   <AspectRatio ratio={1}>
-                    <Image src={scoreMockup} alt="The Score Project" objectFit="cover" />
+                    <Image src={scoreMockup} alt="The Score Project" objectFit="cover" borderRadius="base" />
                   </AspectRatio>
                 </LinkOverlay>
               </LinkBox>

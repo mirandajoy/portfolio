@@ -2,6 +2,7 @@ import ProjectLayout from "../../components/ProjectLayout/ProjectLayout";
 import homePage from "../../assets/score-home.png";
 import articlePage from "../../assets/score-article.png";
 import heroMockup from "../../assets/score-mockup.jpg";
+import { useEffect } from "react";
 import "./TheScorePage.scss";
 
 function TheScorePage() {
@@ -26,9 +27,19 @@ function TheScorePage() {
     },
   ];
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <ProjectLayout title="The Score Insider" summary={summary} approach={approach} result={result} heroImg={heroMockup}/>
+      <ProjectLayout
+        title="The Score Insider"
+        summary={summary}
+        approach={approach}
+        result={result}
+        heroImg={heroMockup}
+      />
     </>
   );
 }

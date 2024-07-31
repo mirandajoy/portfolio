@@ -2,6 +2,7 @@ import ProjectLayout from "../../components/ProjectLayout/ProjectLayout";
 import heroMockup from "../../assets/learning-club-mockup.jpg";
 import landingPage from "../../assets/learning-club-landing.png";
 import dashboard from "../../assets/learning-club-dashboard.png";
+import { useEffect } from "react";
 import "./LearningClubPage.scss";
 
 function LearningClubPage() {
@@ -33,9 +34,20 @@ function LearningClubPage() {
       image: dashboard,
     },
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <ProjectLayout title="The Learning Club" summary={summary} approach={approach} result={result} heroImg={heroMockup}/>
+      <ProjectLayout
+        title="The Learning Club"
+        summary={summary}
+        approach={approach}
+        result={result}
+        heroImg={heroMockup}
+      />
     </>
   );
 }
