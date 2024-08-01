@@ -24,11 +24,13 @@ function LearningClubPage() {
 
   const result = [
     {
+      highlight: `Landing Page`,
       text: `Users can discover the Learning Club landing page and explore what groups exists near them. To launch or join
           a group they can sign up.`,
       image: landingPage,
     },
     {
+      highlight: `Dashboard`,
       text: `On sign up users will see the theme of the month, links to the learning resources and options to join groups
           and rsvp to events.`,
       image: dashboard,

@@ -18,10 +18,12 @@ function TheScorePage() {
 
   const result = [
     {
+      highlight: `Sidebar`,
       text: `The player news section integrates with the existing layout on The Score.`,
       image: homePage,
     },
     {
+      highlight: `Article Page`,
       text: `Users can click into view articles in more depth and dive into a discussion section with their opinions on the situation.`,
       image: articlePage,
     },

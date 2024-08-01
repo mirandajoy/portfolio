@@ -1,14 +1,19 @@
-import { Box, Heading, Image, Text } from "@chakra-ui/react";
+import { AspectRatio, Box, Heading, Image, Text, useColorModeValue } from "@chakra-ui/react";
 import Header from "../../components/Header/Header";
 import "./ProjectLayout.scss";
 
 function ProjectLayout({ heroImg, title, summary, approach, result }) {
+  const resultBgColor = useColorModeValue("gray.50", "gray.900");
+  const summaryBgColor = useColorModeValue("gray.100", "gray.600");
+
   return (
     <>
-      <Header bgColor="blue.500" color="gray.50"/>
-      <Box mt="14" mb="10">
+      <Header bgColor="blue.500" color="gray.50" />
+      <Box mt="10">
         <Box as="section" p="9" maxW="800px" m="auto">
-          <Image src={heroImg} alt="" w="100%" pb="9" />
+          <AspectRatio ratio={16 / 9}>
+            <Image src={heroImg} alt="" w="100%" pb="16" objectFit="cover" objectPosition="left" />
+          </AspectRatio>
           <Heading as="h1" size="2xl" pb="4">
             {title}
           </Heading>
@@ -37,20 +42,23 @@ function ProjectLayout({ heroImg, title, summary, approach, result }) {
             );
           })}
         </Box>
-        <Box as="section" py="4" px="9" maxW="800px" m="auto">
-          <Heading as="h2" size="xl" pb="4">
-            The Result
-          </Heading>
-          {result.map((r, i) => {
-            return (
-              <Box key={i}>
-                <Image src={r.image} alt="" w="100%" border="1px" borderColor="gray.200" borderTopRadius="base" />
-                <Text fontSize="md" p="4" bg="gray.100" mb="9" borderBottomRadius="base">
-                  {r.text}
-                </Text>
-              </Box>
-            );
-          })}
+        <Box bgColor={resultBgColor} mt="10">
+          <Box as="section" pt="4" pb="12" px="9" maxW="800px" m="auto">
+            <Heading as="h2" size="xl" pt="12" pb="4">
+              The Result
+            </Heading>
+            {result.map((r, i) => {
+              return (
+                <Box key={i} boxShadow="lg" marginY="3">
+                  <Image src={r.image} alt="" w="100%" borderTopRadius="base" />
+                  <Text fontSize="md" px="8" py="4" bg={summaryBgColor} mb="9" borderBottomRadius="base">
+                    <Text as="span" fontWeight="bold">{r.highlight}: </Text>
+                    {r.text}
+                  </Text>
+                </Box>
+              );
+            })}
+          </Box>
         </Box>
       </Box>
     </>

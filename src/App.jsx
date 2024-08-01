@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import LearningClubPage from "./pages/LearningClubPage/LearningClubPage";
 import TheScorePage from "./pages/TheScorePage/TheScorePage";
-import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
 function App() {

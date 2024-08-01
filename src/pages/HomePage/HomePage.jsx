@@ -5,7 +5,6 @@ import {
   Grid,
   GridItem,
   Heading,
-  HStack,
   Image,
   Link as ChakraLink,
   LinkBox,
@@ -18,22 +17,77 @@ import profile from "../../assets/profile.jpg";
 import scoreMockup from "../../assets/score-mockup.jpg";
 import learningClubMockup from "../../assets/learning-club-sq.jpg";
 import Header from "../../components/Header/Header";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./HomePage.scss";
 
+const sections = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "mywork", label: "My Work" },
+  { id: "contact", label: "Contact" },
+];
+
 function HomePage() {
+  const [visibleSection, setVisibleSection] = useState("");
+  const sectionRef = useRef({});
+  const visibilityRatios = useRef({});
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          visibilityRatios.current[entry.target.id] = entry.intersectionRatio;
+        });
+
+        const mostVisibleSection = Object.keys(visibilityRatios.current).reduce((mostVisible, sectionId) => {
+          if (visibilityRatios.current[sectionId] > (visibilityRatios.current[mostVisible] || 0)) {
+            return sectionId;
+          }
+          return mostVisible;
+        }, "");
+
+        setVisibleSection(mostVisibleSection);
+      },
+      {
+        threshold: [0.75, 1],
+      }
+    );
+
+    sections.forEach((section) => {
+      if (sectionRef.current[section.id]) {
+        observer.observe(sectionRef.current[section.id]);
+      }
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        if (sectionRef.current[section.id]) {
+          observer.unobserve(sectionRef.current[section.id]);
+        }
+      });
+    };
   }, []);
 
   return (
     <>
-      <Header bgColor="blue.500" color="gray.50" />
-      <Box mt="14" mb="10">
-        <Flex as="section" p="9" align="center" justify="center" gap="9" maxW="800px" mx="auto">
+      <Box pos="fixed" top="0" w="100%" zIndex="100" t="0">
+        <Header bgColor="blue.500" color="gray.50" visibleSection={visibleSection} />
+      </Box>
+      <Box mb="10" mt="168px">
+        <Flex
+          ref={(el) => (sectionRef.current["home"] = el)}
+          id="home"
+          as="section"
+          p="9"
+          align="center"
+          justify="center"
+          gap="9"
+          maxW="800px"
+          mx="auto"
+        >
           <AspectRatio w="50%" ratio={1}>
-            <Image src={profile} alt="My Photo" maxW="300px" borderRadius="md" />
+            <Image src={profile} alt="My Photo" maxW="300px" borderRadius="md" objectFit="cover" />
           </AspectRatio>
           <Box>
             <Heading as="h2" size="xl" pb="4">
@@ -48,7 +102,7 @@ function HomePage() {
           </Box>
         </Flex>
 
-        <Box id="about" as="section" p="9" maxW="800px" m="auto">
+        <Box ref={(el) => (sectionRef.current["about"] = el)} id="about" as="section" p="9" maxW="800px" m="auto">
           <Heading as="h2" size="xl" pb="4">
             About Me
           </Heading>
@@ -70,20 +124,20 @@ function HomePage() {
               </Text>
             </Box>
             <Flex gap="3" basis="40%" wrap="wrap" justify="flex-end" marginY="3">
-              <Tag bgColor="brand.700">HTML</Tag>
-              <Tag bgColor="brand.700">CSS</Tag>
-              <Tag bgColor="brand.700">Sass</Tag>
-              <Tag bgColor="brand.700">JavaScript</Tag>
-              <Tag bgColor="brand.700">React</Tag>
-              <Tag bgColor="brand.700">React Router</Tag>
-              <Tag bgColor="brand.700">Node.js</Tag>
-              <Tag bgColor="brand.700">Express</Tag>
-              <Tag bgColor="brand.700">MySQL</Tag>
+              <Tag color="gray.800" bgColor="brand.700">HTML</Tag>
+              <Tag color="gray.800" bgColor="brand.700">CSS</Tag>
+              <Tag color="gray.800" bgColor="brand.700">Sass</Tag>
+              <Tag color="gray.800" bgColor="brand.700">JavaScript</Tag>
+              <Tag color="gray.800" bgColor="brand.700">React</Tag>
+              <Tag color="gray.800" bgColor="brand.700">React Router</Tag>
+              <Tag color="gray.800" bgColor="brand.700">Node.js</Tag>
+              <Tag color="gray.800" bgColor="brand.700">Express</Tag>
+              <Tag color="gray.800" bgColor="brand.700">MySQL</Tag>
             </Flex>
           </Flex>
         </Box>
 
-        <Box id="mywork" as="section" p="9" maxW="800px" m="auto">
+        <Box ref={(el) => (sectionRef.current["mywork"] = el)} id="mywork" as="section" p="9" maxW="800px" m="auto">
           <Heading as="h2" size="xl" pb="9">
             Projects
           </Heading>
@@ -109,7 +163,7 @@ function HomePage() {
           </Grid>
         </Box>
 
-        <Box id="contact" as="section" p="9" maxW="800px" m="auto">
+        <Box ref={(el) => (sectionRef.current["contact"] = el)} id="contact" as="section" p="9" maxW="800px" m="auto">
           <Heading as="h2" size="xl" pb="4">
             Contact
           </Heading>
