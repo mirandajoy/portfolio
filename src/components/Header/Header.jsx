@@ -11,7 +11,7 @@ import {
   MenuList,
   MenuItem,
   Button,
-  Icon
+  useColorModeValue
 } from "@chakra-ui/react";
 import { SunIcon, MoonIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { useLocation, useNavigate } from "react-router";
@@ -21,6 +21,8 @@ import "./Header.scss";
 
 function Header({ bgColor, color, visibleSection }) {
   const { colorMode, toggleColorMode } = useColorMode();
+  const menuColor = useColorModeValue("black", "white");
+
   let location = useLocation();
   const currentPath = location.pathname;
   const currentHash = location.hash;
@@ -96,14 +98,14 @@ function Header({ bgColor, color, visibleSection }) {
           <MenuButton as={Button} display={["block", "block", "none"]}>
             <ChevronDownIcon />
           </MenuButton>
-          <MenuList color="black">
+          <MenuList color={menuColor}>
             <MenuItem as={HashLink} to="/#home">
               Home
             </MenuItem>
             <MenuItem as={HashLink} to="/#about">
               About
             </MenuItem>
-            <MenuItem as={HashLink} to="/#projects">
+            <MenuItem as={HashLink} to="/#mywork">
               Projects
             </MenuItem>
             <MenuItem as={HashLink} to="/#contact">
