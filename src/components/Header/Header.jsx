@@ -1,5 +1,19 @@
-import { Box, Flex, Heading, HStack, Link as ChakraLink, IconButton, useColorMode, Text } from "@chakra-ui/react";
-import { SunIcon, MoonIcon } from "@chakra-ui/icons";
+import {
+  Box,
+  Flex,
+  Heading,
+  HStack,
+  Link as ChakraLink,
+  IconButton,
+  useColorMode,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Button,
+  Icon
+} from "@chakra-ui/react";
+import { SunIcon, MoonIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { useLocation, useNavigate } from "react-router";
 import { HashLink } from "react-router-hash-link";
 import { useEffect } from "react";
@@ -23,10 +37,13 @@ function Header({ bgColor, color, visibleSection }) {
   return (
     <Box as="header">
       <Flex align="center" justify="space-between" p="9" bgColor={bgColor} color={color}>
-        <Heading as="h3" size="md" fontFamily="Rock Salt">
+        <Heading as="h3" size="md" fontFamily="Rock Salt" display={["none", "none", "block"]}>
           Miranda Neerhof
         </Heading>
-        <HStack spacing="1">
+        <Heading as="h3" size="md" fontFamily="Rock Salt" display={["block", "block", "none"]}>
+          MN
+        </Heading>
+        <HStack spacing="1" display={["none", "none", "block"]}>
           <ChakraLink
             as={HashLink}
             to="/#home"
@@ -75,6 +92,25 @@ function Header({ bgColor, color, visibleSection }) {
             {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
           </IconButton>
         </HStack>
+        <Menu>
+          <MenuButton as={Button} display={["block", "block", "none"]}>
+            <ChevronDownIcon />
+          </MenuButton>
+          <MenuList color="black">
+            <MenuItem as={HashLink} to="/#home">
+              Home
+            </MenuItem>
+            <MenuItem as={HashLink} to="/#about">
+              About
+            </MenuItem>
+            <MenuItem as={HashLink} to="/#projects">
+              Projects
+            </MenuItem>
+            <MenuItem as={HashLink} to="/#contact">
+              Contact
+            </MenuItem>
+          </MenuList>
+        </Menu>
       </Flex>
     </Box>
   );

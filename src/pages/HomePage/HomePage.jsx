@@ -74,7 +74,7 @@ function HomePage() {
       <Box pos="fixed" top="0" w="100%" zIndex="100" t="0">
         <Header bgColor="blue.500" color="gray.50" visibleSection={visibleSection} />
       </Box>
-      <Box mb="10" mt="168px">
+      <Box mb="10" mt={["120px", "140px", "168px"]}>
         <Flex
           ref={(el) => (sectionRef.current["home"] = el)}
           id="home"
@@ -85,11 +85,12 @@ function HomePage() {
           gap="9"
           maxW="800px"
           mx="auto"
+          flexWrap={["wrap", "wrap", "nowrap"]}
         >
-          <AspectRatio w="50%" ratio={1}>
-            <Image src={profile} alt="My Photo" maxW="300px" borderRadius="md" objectFit="cover" />
+          <AspectRatio w={["100%", "75%", "50%"]} ratio={[12/7, 12/7, 1]}>
+            <Image src={profile} alt="My Photo" maxW={["100%", "100%", "300px"]} borderRadius="md" objectFit="cover" />
           </AspectRatio>
-          <Box>
+          <Box w={["100%", "75%"]}>
             <Heading as="h2" size="xl" pb="4">
               Hi there!
             </Heading>
@@ -103,11 +104,11 @@ function HomePage() {
         </Flex>
 
         <Box ref={(el) => (sectionRef.current["about"] = el)} id="about" as="section" p="9" maxW="800px" m="auto">
-          <Heading as="h2" size="xl" pb="4">
+          <Heading as="h2" size="xl" pb="4" w={["100%", "75%", "100%"]} m="auto">
             About Me
           </Heading>
-          <Flex align="flex-start" justify="space-between" gap="9">
-            <Box flexBasis="60%">
+          <Flex align="flex-start" justify={["center", "center", "space-between"]} gap="9" flexWrap={["wrap", "wrap", "nowrap"]}>
+            <Box flexBasis={["100%", "75%", "60%"]}>
               <Text fontSize="md" marginY="3">
                 I've been working in the tech industry for the past 7 years. I got my start as a UX Designer and have
                 worked for the past 5+ years as a Product Manager.
@@ -123,7 +124,7 @@ function HomePage() {
                 contribute to a team as a Software Engineer.
               </Text>
             </Box>
-            <Flex gap="3" basis="40%" wrap="wrap" justify="flex-end" marginY="3">
+            <Flex gap="3" flexBasis={["100%", "75%", "40%"]} wrap="wrap" justify={["flex-start", "flex-start", "flex-end"]} marginY="3">
               <Tag color="gray.800" bgColor="brand.700">HTML</Tag>
               <Tag color="gray.800" bgColor="brand.700">CSS</Tag>
               <Tag color="gray.800" bgColor="brand.700">Sass</Tag>
