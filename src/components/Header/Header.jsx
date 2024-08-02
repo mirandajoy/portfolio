@@ -36,7 +36,7 @@ function Header({ bgColor, color, visibleSection }) {
 
   return (
     <Box as="header">
-      <Flex align="center" justify="space-between" p="9" bgColor={bgColor} color={color}>
+      <Flex align="center" justify="space-between" p={["4", "6", "9"]} bgColor={bgColor} color={color}>
         <Heading as="h3" size="md" fontFamily="Rock Salt" display={["none", "none", "block"]}>
           Miranda Neerhof
         </Heading>
