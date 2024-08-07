@@ -1,10 +1,11 @@
-import { AspectRatio, Box, Heading, Image, Text, useColorModeValue } from "@chakra-ui/react";
+import { AspectRatio, Box, Card, CardBody, Heading, Image, Stack, Text, useColorModeValue } from "@chakra-ui/react";
 import Header from "../../components/Header/Header";
 import "./ProjectLayout.scss";
 
 function ProjectLayout({ heroImg, title, summary, approach, result }) {
   const resultBgColor = useColorModeValue("gray.50", "gray.900");
   const summaryBgColor = useColorModeValue("gray.100", "gray.600");
+  const projectCardOutline = useColorModeValue("gray.200", "gray.800");
 
   return (
     <>
@@ -47,17 +48,25 @@ function ProjectLayout({ heroImg, title, summary, approach, result }) {
             <Heading as="h2" size="xl" pt="12" pb="4">
               The Result
             </Heading>
-            {result.map((r, i) => {
-              return (
-                <Box key={i} boxShadow="lg" marginY="3">
-                  <Image src={r.image} alt="" w="100%" borderTopRadius="base" />
-                  <Text fontSize="md" px="8" py="4" bg={summaryBgColor} mb="9" borderBottomRadius="base">
-                    <Text as="span" fontWeight="bold">{r.highlight}: </Text>
-                    {r.text}
-                  </Text>
-                </Box>
-              );
-            })}
+            <Stack mt="3" spacing="6">
+              {result.map((r, i) => {
+                return (
+                  <Card key={i} border="1px" borderColor={projectCardOutline}>
+                    <CardBody>
+                      <Image src={r.image} alt="" borderRadius="base" border="1px" borderColor={projectCardOutline} />
+                      <Stack mt="6" spacing="3">
+                        <Text>
+                          <Text as="span" fontWeight="bold">
+                            {r.highlight}:{" "}
+                          </Text>
+                          {r.text}
+                        </Text>
+                      </Stack>
+                    </CardBody>
+                  </Card>
+                );
+              })}
+            </Stack>
           </Box>
         </Box>
       </Box>
