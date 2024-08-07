@@ -11,11 +11,14 @@ import {
   LinkOverlay,
   Tag,
   Text,
+  Button,
 } from "@chakra-ui/react";
+import { DownloadIcon }  from "@chakra-ui/icons"
 import { Link } from "react-router-dom";
 import profile from "../../assets/profile.jpg";
 import scoreMockup from "../../assets/score-mockup.jpg";
 import learningClubMockup from "../../assets/learning-club-sq.jpg";
+import resume from "../../../public/miranda_neerhof_resume.pdf"
 import Header from "../../components/Header/Header";
 import { useEffect, useRef, useState } from "react";
 import "./HomePage.scss";
@@ -87,7 +90,7 @@ function HomePage() {
           mx="auto"
           flexWrap={["wrap", "wrap", "nowrap"]}
         >
-          <AspectRatio w={["100%", "75%", "50%"]} ratio={[12/7, 12/7, 1]}>
+          <AspectRatio w={["100%", "75%", "50%"]} ratio={[12 / 7, 12 / 7, 1]}>
             <Image src={profile} alt="My Photo" maxW={["100%", "100%", "300px"]} borderRadius="md" objectFit="cover" />
           </AspectRatio>
           <Box w={["100%", "75%"]}>
@@ -103,11 +106,23 @@ function HomePage() {
           </Box>
         </Flex>
 
-        <Box ref={(el) => (sectionRef.current["about"] = el)} id="about" as="section" p={["4", "6", "9"]} maxW="800px" m="auto">
+        <Box
+          ref={(el) => (sectionRef.current["about"] = el)}
+          id="about"
+          as="section"
+          p={["4", "6", "9"]}
+          maxW="800px"
+          m="auto"
+        >
           <Heading as="h2" size="xl" pb={["1", "2", "4"]} w={["100%", "75%", "100%"]} m="auto">
             About Me
           </Heading>
-          <Flex align="flex-start" justify={["center", "center", "space-between"]} gap={["4", "4", "9"]} flexWrap={["wrap", "wrap", "nowrap"]}>
+          <Flex
+            align="flex-start"
+            justify={["center", "center", "space-between"]}
+            gap={["4", "4", "9"]}
+            flexWrap={["wrap", "wrap", "nowrap"]}
+          >
             <Box flexBasis={["100%", "75%", "60%"]}>
               <Text fontSize="md" marginY="3">
                 I've been working in the tech industry for the past 7 years. I got my start as a UX Designer and have
@@ -124,21 +139,52 @@ function HomePage() {
                 contribute to a team as a Software Engineer.
               </Text>
             </Box>
-            <Flex gap="3" flexBasis={["100%", "75%", "40%"]} wrap="wrap" justify={["flex-start", "flex-start", "flex-end"]} marginY={["0", "0", "3"]}>
-              <Tag color="gray.800" bgColor="brand.700">HTML</Tag>
-              <Tag color="gray.800" bgColor="brand.700">CSS</Tag>
-              <Tag color="gray.800" bgColor="brand.700">Sass</Tag>
-              <Tag color="gray.800" bgColor="brand.700">JavaScript</Tag>
-              <Tag color="gray.800" bgColor="brand.700">React</Tag>
-              <Tag color="gray.800" bgColor="brand.700">React Router</Tag>
-              <Tag color="gray.800" bgColor="brand.700">Node.js</Tag>
-              <Tag color="gray.800" bgColor="brand.700">Express</Tag>
-              <Tag color="gray.800" bgColor="brand.700">MySQL</Tag>
+            <Flex
+              gap="3"
+              flexBasis={["100%", "75%", "40%"]}
+              wrap="wrap"
+              justify={["flex-start", "flex-start", "flex-end"]}
+              marginY={["0", "0", "3"]}
+            >
+              <Tag color="gray.800" bgColor="brand.700">
+                HTML
+              </Tag>
+              <Tag color="gray.800" bgColor="brand.700">
+                CSS
+              </Tag>
+              <Tag color="gray.800" bgColor="brand.700">
+                Sass
+              </Tag>
+              <Tag color="gray.800" bgColor="brand.700">
+                JavaScript
+              </Tag>
+              <Tag color="gray.800" bgColor="brand.700">
+                React
+              </Tag>
+              <Tag color="gray.800" bgColor="brand.700">
+                React Router
+              </Tag>
+              <Tag color="gray.800" bgColor="brand.700">
+                Node.js
+              </Tag>
+              <Tag color="gray.800" bgColor="brand.700">
+                Express
+              </Tag>
+              <Tag color="gray.800" bgColor="brand.700">
+                MySQL
+              </Tag>
             </Flex>
           </Flex>
         </Box>
 
-        <Box ref={(el) => (sectionRef.current["mywork"] = el)} id="mywork" as="section" p={["4", "6", "9"]} maxW="800px" m="auto">
+        <Box
+          ref={(el) => (sectionRef.current["mywork"] = el)}
+          id="mywork"
+          as="section"
+          p={["4", "6", "9"]}
+          maxW="800px"
+          m="auto"
+        >
           <Heading as="h2" size="xl" pb={["4", "6", "9"]}>
             Projects
           </Heading>
@@ -164,32 +210,54 @@ function HomePage() {
           </Grid>
         </Box>
 
-        <Box ref={(el) => (sectionRef.current["contact"] = el)} id="contact" as="section" p={["4", "6", "9"]} maxW="800px" m="auto">
+        <Box
+          ref={(el) => (sectionRef.current["contact"] = el)}
+          id="contact"
+          as="section"
+          p={["4", "6", "9"]}
+          maxW="800px"
+          m="auto"
+        >
           <Heading as="h2" size="xl" pb={["1", "2", "4"]}>
             Contact
           </Heading>
-          <Text fontSize="md" marginY="3">
-            You can reach me at:{" "}
-            <ChakraLink href="mailto:miranda.neerhof@gmail.com" isExternal color="blue.600" fontWeight="semibold">
-              miranda.neerhof@gmail.com
-            </ChakraLink>
-          </Text>
-          <Text fontSize="md" marginY="3">
-            Connect with me on:
-            <ChakraLink
-              href="https://www.linkedin.com/in/mirandaneerhof/"
-              isExternal
-              px="2"
-              color="blue.600"
-              fontWeight="semibold"
-            >
-              LinkedIn
-            </ChakraLink>
-            |
-            <ChakraLink href="https://github.com/mirandajoy/" isExternal px="2" color="blue.600" fontWeight="semibold">
-              GitHub
-            </ChakraLink>
-          </Text>
+          <Flex justify="space-between">
+            <Box>
+              <Text fontSize="md" marginY="3">
+                You can reach me at:{" "}
+                <ChakraLink href="mailto:miranda.neerhof@gmail.com" isExternal color="blue.600" fontWeight="semibold">
+                  miranda.neerhof@gmail.com
+                </ChakraLink>
+              </Text>
+              <Text fontSize="md" marginY="3">
+                Connect with me on:
+                <ChakraLink
+                  href="https://www.linkedin.com/in/mirandaneerhof/"
+                  isExternal
+                  px="2"
+                  color="blue.600"
+                  fontWeight="semibold"
+                >
+                  LinkedIn
+                </ChakraLink>
+                |
+                <ChakraLink
+                  href="https://github.com/mirandajoy/"
+                  isExternal
+                  px="2"
+                  color="blue.600"
+                  fontWeight="semibold"
+                >
+                  GitHub
+                </ChakraLink>
+              </Text>
+            </Box>
+            <Box>
+              <Button as="a" colorScheme="gray" variant="outline" leftIcon={<DownloadIcon />} href={resume} download="miranda_neerhof_resume.pdf">
+                Download My Resume
+              </Button>
+            </Box>
+          </Flex>
         </Box>
       </Box>
     </>
