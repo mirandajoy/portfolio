@@ -1,6 +1,11 @@
 import {
   AspectRatio,
   Box,
+  ButtonGroup,
+  Card,
+  CardBody,
+  CardFooter,
+  Divider,
   Flex,
   Grid,
   GridItem,
@@ -9,16 +14,18 @@ import {
   Link as ChakraLink,
   LinkBox,
   LinkOverlay,
+  Stack,
   Tag,
   Text,
   Button,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import { DownloadIcon }  from "@chakra-ui/icons"
+import { DownloadIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import profile from "../../assets/profile.jpg";
 import scoreMockup from "../../assets/score-mockup.jpg";
 import learningClubMockup from "../../assets/learning-club-sq.jpg";
-import resume from "../../../public/miranda_neerhof_resume.pdf"
+import resume from "../../../public/miranda_neerhof_resume.pdf";
 import Header from "../../components/Header/Header";
 import { useEffect, useRef, useState } from "react";
 import "./HomePage.scss";
@@ -34,6 +41,7 @@ function HomePage() {
   const [visibleSection, setVisibleSection] = useState("");
   const sectionRef = useRef({});
   const visibilityRatios = useRef({});
+  const projectCardOutline = useColorModeValue("gray.200", "gray.800");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -190,22 +198,75 @@ function HomePage() {
           </Heading>
           <Grid templateColumns="repeat(2, 1fr)" gap={4}>
             <GridItem>
-              <LinkBox>
-                <LinkOverlay as={Link} to="/learning-club">
-                  <AspectRatio ratio={1}>
-                    <Image src={learningClubMockup} alt="Learning Club" objectFit="cover" borderRadius="base" />
-                  </AspectRatio>
-                </LinkOverlay>
-              </LinkBox>
+              <Card maxW="sm" border="1px" borderColor={projectCardOutline}>
+                <LinkBox>
+                  <LinkOverlay as={Link} to="/learning-club">
+                    <CardBody pb="0">
+                      <AspectRatio ratio={3 / 2}>
+                        <Image src={learningClubMockup} alt="Learning Club Homepage Mockup" borderRadius="base" />
+                      </AspectRatio>
+                      <Stack mt="6" spacing="3">
+                        <Heading size="md">The Learning Club</Heading>
+                        <Text>
+                          A platform to bring curious people together to learn and connect. Designed to allow people to create meet up groups and organize discussion-based events.
+                        </Text>
+                      </Stack>
+                    </CardBody>
+                  </LinkOverlay>
+                </LinkBox>
+                <CardFooter>
+                  <ButtonGroup spacing="2">
+                    <Button variant="solid" colorScheme="blue" as={Link} to="/learning-club">
+                      Learn More
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      colorScheme="blue"
+                      as="a"
+                      href="https://github.com/mirandajoy/miranda-neerhof-the-learning-club"
+                      target="_blank"
+                    >
+                      View GitHub
+                    </Button>
+                  </ButtonGroup>
+                </CardFooter>
+              </Card>
             </GridItem>
             <GridItem>
-              <LinkBox>
-                <LinkOverlay as={Link} to="/the-score">
-                  <AspectRatio ratio={1}>
-                    <Image src={scoreMockup} alt="The Score Project" objectFit="cover" borderRadius="base" />
-                  </AspectRatio>
-                </LinkOverlay>
-              </LinkBox>
+              <Card maxW="sm" border="1px" borderColor={projectCardOutline}>
+                <LinkBox>
+                  <LinkOverlay as={Link} to="/the-score">
+                    <CardBody pb="0">
+                      <AspectRatio ratio={3 / 2}>
+                        <Image src={scoreMockup} alt="The Score Mockup" borderRadius="base" />
+                      </AspectRatio>
+                      <Stack mt="6" spacing="3">
+                        <Heading size="md">The Score Insider</Heading>
+                        <Text>
+                          An hackathon concept project to extend "The Score" new to include juicy, player-focused
+                          information to engage fans during the off-season.
+                        </Text>
+                      </Stack>
+                    </CardBody>
+                  </LinkOverlay>
+                </LinkBox>
+                <CardFooter>
+                  <ButtonGroup spacing="2">
+                    <Button variant="solid" colorScheme="blue" as={Link} to="/the-score">
+                      Learn More
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      colorScheme="blue"
+                      as="a"
+                      href="https://github.com/mirandajoy/tea-time-at-the-score"
+                      target="_blank"
+                    >
+                      View GitHub
+                    </Button>
+                  </ButtonGroup>
+                </CardFooter>
+              </Card>
             </GridItem>
           </Grid>
         </Box>
@@ -253,7 +314,14 @@ function HomePage() {
               </Text>
             </Box>
             <Box>
-              <Button as="a" colorScheme="gray" variant="outline" leftIcon={<DownloadIcon />} href={resume} download="miranda_neerhof_resume.pdf">
+              <Button
+                as="a"
+                colorScheme="gray"
+                variant="outline"
+                leftIcon={<DownloadIcon />}
+                href={resume}
+                download="miranda_neerhof_resume.pdf"
+              >
                 Download My Resume
               </Button>
             </Box>
