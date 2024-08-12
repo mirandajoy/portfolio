@@ -217,7 +217,7 @@ function HomePage() {
             <GridItem>
               <Card maxW="sm" border="1px" borderColor={projectCardOutline}>
                 <LinkBox>
-                  <LinkOverlay as={Link} to="/the-score">
+                  <LinkOverlay as={Link} to="/mountains-and-rivers">
                     <CardBody pb="0">
                       <AspectRatio ratio={3 / 2}>
                         <Image src={gameMockup} alt="Mountain and Rivers Game Mockup" borderRadius="base" />
