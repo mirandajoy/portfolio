@@ -1,33 +1,15 @@
-import {
-  AspectRatio,
-  Box,
-  ButtonGroup,
-  Card,
-  CardBody,
-  CardFooter,
-  Divider,
-  Flex,
-  Grid,
-  GridItem,
-  Heading,
-  Image,
-  Link as ChakraLink,
-  LinkBox,
-  LinkOverlay,
-  Stack,
-  Tag,
-  Text,
-  Button,
-  useColorModeValue,
-} from "@chakra-ui/react";
 import { DownloadIcon } from "@chakra-ui/icons";
+import { AspectRatio, Box, Button, ButtonGroup, Card, CardBody, CardFooter, Link as ChakraLink, Divider, Flex, Grid, GridItem, Heading, Image, LinkBox, LinkOverlay, Stack, Tag, Text, useColorModeValue } from "@chakra-ui/react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+
+import resume from "../../../public/miranda_neerhof_resume.pdf";
+import gameMockup from "../../assets/game-mockup-sq.jpg";
+import learningClubMockup from "../../assets/learning-club-sq.jpg";
 import profile from "../../assets/profile.jpg";
 import scoreMockup from "../../assets/score-mockup.jpg";
-import learningClubMockup from "../../assets/learning-club-sq.jpg";
-import resume from "../../../public/miranda_neerhof_resume.pdf";
 import Header from "../../components/Header/Header";
-import { useEffect, useRef, useState } from "react";
+
 import "./HomePage.scss";
 
 const sections = [
@@ -238,13 +220,12 @@ function HomePage() {
                   <LinkOverlay as={Link} to="/the-score">
                     <CardBody pb="0">
                       <AspectRatio ratio={3 / 2}>
-                        <Image src={scoreMockup} alt="The Score Mockup" borderRadius="base" />
+                        <Image src={gameMockup} alt="Mountain and Rivers Game Mockup" borderRadius="base" />
                       </AspectRatio>
                       <Stack mt="6" spacing="3">
-                        <Heading size="md">The Score Insider</Heading>
+                        <Heading size="md">Mountain and Rivers Game</Heading>
                         <Text>
-                          An hackathon concept project to extend "The Score" new to include juicy, player-focused
-                          information to engage fans during the off-season.
+                        A single-player web game where the user moves across the board based on the dice roll. Moving up mountains and down rivers keeps the game interesting.
                         </Text>
                       </Stack>
                     </CardBody>
@@ -252,14 +233,14 @@ function HomePage() {
                 </LinkBox>
                 <CardFooter>
                   <ButtonGroup spacing="2">
-                    <Button variant="solid" colorScheme="blue" as={Link} to="/the-score">
+                    <Button variant="solid" colorScheme="blue" as={Link} to="/mountains-and-rivers">
                       Learn More
                     </Button>
                     <Button
                       variant="ghost"
                       colorScheme="blue"
                       as="a"
-                      href="https://github.com/mirandajoy/tea-time-at-the-score"
+                      href="https://github.com/mirandajoy/mountains-and-rivers"
                       target="_blank"
                     >
                       View GitHub
