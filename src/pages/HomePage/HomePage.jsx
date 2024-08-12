@@ -155,6 +155,9 @@ function HomePage() {
                 React Router
               </Tag>
               <Tag color="gray.800" bgColor="brand.700">
+                Typescript
+              </Tag>
+              <Tag color="gray.800" bgColor="brand.700">
                 Node.js
               </Tag>
               <Tag color="gray.800" bgColor="brand.700">
