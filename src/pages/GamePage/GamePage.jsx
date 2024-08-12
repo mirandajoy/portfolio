@@ -20,12 +20,12 @@ function GamePage() {
     {
       highlight: `Setup and Instructions`,
       text: `A user can start playing simply by entering their player name, no log in is required.`,
-      image: gameBoard,
+      image: gameSetup,
     },
     {
       highlight: `Board and Game Actions`,
       text: `A user can roll to move across the board and their new position will be calculated automatically. Once the user or the computer player known as "The Guide" reaches the 100th square the game ends and the winner is declared.`,
-      image: gameSetup,
+      image: gameBoard,
     },
   ];
 
