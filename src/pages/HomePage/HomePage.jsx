@@ -1,13 +1,32 @@
 import { DownloadIcon } from "@chakra-ui/icons";
-import { AspectRatio, Box, Button, ButtonGroup, Card, CardBody, CardFooter, Link as ChakraLink, Divider, Flex, Grid, GridItem, Heading, Image, LinkBox, LinkOverlay, Stack, Tag, Text, useColorModeValue } from "@chakra-ui/react";
+import {
+  AspectRatio,
+  Box,
+  Button,
+  ButtonGroup,
+  Card,
+  CardBody,
+  CardFooter,
+  Link as ChakraLink,
+  Flex,
+  Grid,
+  GridItem,
+  Heading,
+  Image,
+  LinkBox,
+  LinkOverlay,
+  Stack,
+  Tag,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import resume from "../../../public/miranda_neerhof_resume.pdf";
 import gameMockup from "../../assets/game-mockup-sq.jpg";
 import learningClubMockup from "../../assets/learning-club-sq.jpg";
-import profile from "../../assets/profile.jpg";
-import scoreMockup from "../../assets/score-mockup.jpg";
+import profile from "../../assets/profile-transparent.png";
 import Header from "../../components/Header/Header";
 
 import "./HomePage.scss";
@@ -24,6 +43,11 @@ function HomePage() {
   const sectionRef = useRef({});
   const visibilityRatios = useRef({});
   const projectCardOutline = useColorModeValue("gray.200", "gray.800");
+  const headerColor = useColorModeValue("gray.50", "gray.50");
+  const headerBg = useColorModeValue("brand.600", "brand.600");
+  const logoColor = useColorModeValue("gray.50", "gray.50");
+  const imageOutline = useColorModeValue("1px solid", "none");
+  const imageBg = useColorModeValue("#7086c31a", "#7086c333");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -65,7 +89,7 @@ function HomePage() {
   return (
     <>
       <Box pos="fixed" top="0" w="100%" zIndex="100" t="0">
-        <Header bgColor="blue.500" color="gray.50" visibleSection={visibleSection} />
+        <Header bgColor={headerBg} color={headerColor} visibleSection={visibleSection} logoColor={logoColor} />
       </Box>
       <Box mb={["4", "6", "10"]} mt={["80px", "100px", "168px"]}>
         <Flex
@@ -81,7 +105,16 @@ function HomePage() {
           flexWrap={["wrap", "wrap", "nowrap"]}
         >
           <AspectRatio w={["100%", "75%", "50%"]} ratio={[12 / 7, 12 / 7, 1]}>
-            <Image src={profile} alt="My Photo" maxW={["100%", "100%", "300px"]} borderRadius="md" objectFit="cover" />
+            <Image
+              src={profile}
+              alt="My Photo"
+              maxW={["100%", "100%", "300px"]}
+              borderRadius="10px"
+              objectFit="cover"
+              bgColor={imageBg}
+              border={imageOutline}
+              borderColor="gray.100"
+            />
           </AspectRatio>
           <Box w={["100%", "75%"]}>
             <Heading as="h2" size="xl" pb={["1", "2", "4"]}>
@@ -120,7 +153,7 @@ function HomePage() {
               </Text>
               <Text fontSize="md" marginY="3">
                 Over the years, I have built out various technical skills from building React Components to support UI
-                implmentation, to researching APIs to uncover solution opportunities, and becoming proficient with SQL
+                implementation, to researching APIs to uncover solution opportunities, and becoming proficient with SQL
                 to drive problem-discovery and track impact.
               </Text>
               <Text fontSize="md" marginY="3">
@@ -136,36 +169,16 @@ function HomePage() {
               justify={["flex-start", "flex-start", "flex-end"]}
               marginY={["0", "0", "3"]}
             >
-              <Tag color="gray.800" bgColor="brand.700">
-                HTML
-              </Tag>
-              <Tag color="gray.800" bgColor="brand.700">
-                CSS
-              </Tag>
-              <Tag color="gray.800" bgColor="brand.700">
-                Sass
-              </Tag>
-              <Tag color="gray.800" bgColor="brand.700">
-                JavaScript
-              </Tag>
-              <Tag color="gray.800" bgColor="brand.700">
-                React
-              </Tag>
-              <Tag color="gray.800" bgColor="brand.700">
-                React Router
-              </Tag>
-              <Tag color="gray.800" bgColor="brand.700">
-                Typescript
-              </Tag>
-              <Tag color="gray.800" bgColor="brand.700">
-                Node.js
-              </Tag>
-              <Tag color="gray.800" bgColor="brand.700">
-                Express
-              </Tag>
-              <Tag color="gray.800" bgColor="brand.700">
-                MySQL
-              </Tag>
+              <Tag>HTML</Tag>
+              <Tag>CSS</Tag>
+              <Tag>Sass</Tag>
+              <Tag>JavaScript</Tag>
+              <Tag>React</Tag>
+              <Tag>React Router</Tag>
+              <Tag>Typescript</Tag>
+              <Tag>Node.js</Tag>
+              <Tag>Express</Tag>
+              <Tag>MySQL</Tag>
             </Flex>
           </Flex>
         </Box>
@@ -191,9 +204,12 @@ function HomePage() {
                         <Image src={learningClubMockup} alt="Learning Club Homepage Mockup" borderRadius="base" />
                       </AspectRatio>
                       <Stack mt="6" spacing="3">
-                        <Heading size="md">The Learning Club</Heading>
+                        <Heading size="md" fontSize="24">
+                          The Learning Club
+                        </Heading>
                         <Text>
-                          A platform to bring curious people together to learn and connect. Designed to allow people to create meet up groups and organize discussion-based events.
+                          A platform to bring curious people together to learn and connect. Designed to allow people to
+                          create meet up groups and organize discussion-based events.
                         </Text>
                       </Stack>
                     </CardBody>
@@ -226,9 +242,12 @@ function HomePage() {
                         <Image src={gameMockup} alt="Mountain and Rivers Game Mockup" borderRadius="base" />
                       </AspectRatio>
                       <Stack mt="6" spacing="3">
-                        <Heading size="md">Mountain and Rivers Game</Heading>
+                        <Heading size="md" fontSize="24">
+                          Zen Trails
+                        </Heading>
                         <Text>
-                        A single-player web game where the user moves across the board based on the dice roll. Moving up mountains and down rivers keeps the game interesting.
+                          A single-player web game where the user moves across the board based on the dice roll. Moving
+                          up mountains and down rivers keeps the game interesting.
                         </Text>
                       </Stack>
                     </CardBody>
@@ -270,34 +289,22 @@ function HomePage() {
             <Box>
               <Text fontSize="md" marginY="3">
                 You can reach me at:{" "}
-                <ChakraLink href="mailto:miranda.neerhof@gmail.com" isExternal color="blue.600" fontWeight="semibold">
+                <ChakraLink href="mailto:miranda.neerhof@gmail.com" isExternal fontWeight="semibold">
                   miranda.neerhof@gmail.com
                 </ChakraLink>
               </Text>
               <Text fontSize="md" marginY="3">
                 Connect with me on:
-                <ChakraLink
-                  href="https://www.linkedin.com/in/mirandaneerhof/"
-                  isExternal
-                  px="2"
-                  color="blue.600"
-                  fontWeight="semibold"
-                >
+                <ChakraLink href="https://www.linkedin.com/in/mirandaneerhof/" isExternal px="2" fontWeight="semibold">
                   LinkedIn
                 </ChakraLink>
                 |
-                <ChakraLink
-                  href="https://github.com/mirandajoy/"
-                  isExternal
-                  px="2"
-                  color="blue.600"
-                  fontWeight="semibold"
-                >
+                <ChakraLink href="https://github.com/mirandajoy/" isExternal px="2" fontWeight="semibold">
                   GitHub
                 </ChakraLink>
               </Text>
             </Box>
-            <Box>
+            {/* <Box>
               <Button
                 as="a"
                 colorScheme="gray"
@@ -308,7 +315,7 @@ function HomePage() {
               >
                 Download My Resume
               </Button>
-            </Box>
+            </Box> */}
           </Flex>
         </Box>
       </Box>

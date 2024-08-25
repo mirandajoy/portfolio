@@ -18,7 +18,6 @@ function App() {
           <Route path="/the-score" element={<TheScorePage />} />
           <Route path="/mountains-and-rivers" element={<GamePage />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </>
   );
