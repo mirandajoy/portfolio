@@ -44,10 +44,10 @@ function HomePage() {
   const visibilityRatios = useRef({});
   const projectCardOutline = useColorModeValue("gray.200", "gray.800");
   const headerColor = useColorModeValue("gray.50", "gray.50");
-  const headerBg = useColorModeValue("brand.600", "brand.600");
+  const headerBg = useColorModeValue("brand.500", "brand.500");
   const logoColor = useColorModeValue("gray.50", "gray.50");
   const imageOutline = useColorModeValue("1px solid", "none");
-  const imageBg = useColorModeValue("#7086c31a", "#7086c333");
+  const imageBg = useColorModeValue("#7086c31a", "#75777733");
 
   useEffect(() => {
     window.scrollTo(0, 0);

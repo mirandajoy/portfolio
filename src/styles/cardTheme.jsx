@@ -5,12 +5,13 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 
 const baseStyle = definePartsStyle({
   container: {
+    borderRadius: "20px",
     backgroundColor: "gray.50",
     boxShadow: "none",
     color: "gray.800",
     borderColor: "gray.800",
     _dark: {
-      backgroundColor: "gray.900",
+      backgroundColor: "gray.700",
       color: "gray.100",
     },
   },
@@ -24,7 +25,7 @@ const baseStyle = definePartsStyle({
 const sizes = {
   md: definePartsStyle({
     container: {
-      borderRadius: "8px",
+      borderRadius: "40px",
       borderColor: "gray.800",
     },
   }),

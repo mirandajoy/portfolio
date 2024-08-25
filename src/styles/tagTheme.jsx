@@ -5,10 +5,12 @@ const { definePartsStyle, defineMultiStyleConfig } = createMultiStyleConfigHelpe
 
 const baseStyle = definePartsStyle({
   container: {
-    bg: "#e3b626",
     bg: "secondary.100",
     color: "gray.900",
     fontWeight: "bold",
+    _dark: {
+      bg: "secondary.200",
+    },
   },
 });
 

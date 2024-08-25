@@ -23,6 +23,7 @@ import "./Header.scss";
 function Header({ bgColor, color, visibleSection, logoColor }) {
   const { colorMode, toggleColorMode } = useColorMode();
   const menuColor = useColorModeValue("black", "white");
+  const textColour = useColorModeValue(color, color);
 
   let location = useLocation();
   const currentPath = location.pathname;
@@ -39,7 +40,7 @@ function Header({ bgColor, color, visibleSection, logoColor }) {
 
   return (
     <Box as="header">
-      <Flex align="center" justify="space-between" p={["4", "5", "5"]} bgColor={bgColor} color={color}>
+      <Flex align="center" justify="space-between" p={["4", "5", "5"]} bgColor={bgColor} color={textColour}>
         <Heading
           as="h3"
           size="md"
@@ -61,8 +62,8 @@ function Header({ bgColor, color, visibleSection, logoColor }) {
             px="4"
             py="1"
             borderRadius="md"
-            color={color ? color : "gray.50"}
-            bgColor={currentHash === "#home" ? "brand.700" : ""}
+            color={textColour ? textColour : "gray.50"}
+            bgColor={currentHash === "#home" ? "brand.600" : ""}
           >
             Home
           </ChakraLink>
@@ -73,8 +74,8 @@ function Header({ bgColor, color, visibleSection, logoColor }) {
             px="4"
             py="1"
             borderRadius="md"
-            color={color ? color : "gray.50"}
-            bgColor={currentHash === "#about" ? "brand.700" : ""}
+            color={textColour ? textColour : "gray.50"}
+            bgColor={currentHash === "#about" ? "brand.600" : ""}
           >
             About
           </ChakraLink>
@@ -85,8 +86,8 @@ function Header({ bgColor, color, visibleSection, logoColor }) {
             px="4"
             py="1"
             borderRadius="md"
-            color={color ? color : "gray.50"}
-            bgColor={currentHash === "#mywork" ? "brand.700" : ""}
+            color={textColour ? textColour : "gray.50"}
+            bgColor={currentHash === "#mywork" ? "brand.600" : ""}
           >
             Projects
           </ChakraLink>
@@ -97,8 +98,8 @@ function Header({ bgColor, color, visibleSection, logoColor }) {
             px="4"
             py="1"
             borderRadius="md"
-            color={color ? color : "gray.50"}
-            bgColor={currentHash === "#contact" ? "brand.700" : ""}
+            color={textColour ? textColour : "gray.50"}
+            bgColor={currentHash === "#contact" ? "brand.600" : ""}
           >
             Contact
           </ChakraLink>

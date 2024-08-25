@@ -40,6 +40,11 @@ const Button = defineStyleConfig({
       _dark: {
         borderColor: "gray.200",
         color: "gray.200",
+        _hover: {
+          bgColor: "gray.200",
+          borderColor: "gray.200",
+          color: "gray.700",
+        },
       },
     },
     solid: {
@@ -47,6 +52,13 @@ const Button = defineStyleConfig({
       color: "gray.50",
       _hover: {
         bgColor: "gray.400",
+      },
+      _dark: {
+        bgColor: "gray.600",
+        _hover: {
+          color: "gray.700",
+          bgColor: "gray.200",
+        },
       },
     },
   },
