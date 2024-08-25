@@ -47,7 +47,7 @@ function HomePage() {
   const headerBg = useColorModeValue("brand.500", "brand.500");
   const logoColor = useColorModeValue("gray.50", "gray.50");
   const imageOutline = useColorModeValue("1px solid", "none");
-  const imageBg = useColorModeValue("#7086c31a", "#75777733");
+  const imageBg = useColorModeValue("#7086c31a", "#ffffffc9");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -100,7 +100,7 @@ function HomePage() {
           align="center"
           justify="center"
           gap="9"
-          maxW="800px"
+          maxW="1000px"
           mx="auto"
           flexWrap={["wrap", "wrap", "nowrap"]}
         >
@@ -108,7 +108,7 @@ function HomePage() {
             <Image
               src={profile}
               alt="My Photo"
-              maxW={["100%", "100%", "300px"]}
+              maxW={["100%", "100%", "400px"]}
               borderRadius="10px"
               objectFit="cover"
               bgColor={imageBg}
@@ -134,7 +134,7 @@ function HomePage() {
           id="about"
           as="section"
           p={["4", "6", "9"]}
-          maxW="800px"
+          maxW="1000px"
           m="auto"
         >
           <Heading as="h2" size="xl" pb={["1", "2", "4"]} w={["100%", "75%", "100%"]} m="auto">
@@ -188,7 +188,7 @@ function HomePage() {
           id="mywork"
           as="section"
           p={["4", "6", "9"]}
-          maxW="800px"
+          maxW="1000px"
           m="auto"
         >
           <Heading as="h2" size="xl" pb={["4", "6", "9"]}>
@@ -196,7 +196,7 @@ function HomePage() {
           </Heading>
           <Grid templateColumns="repeat(2, 1fr)" gap={4}>
             <GridItem>
-              <Card maxW="sm" border="1px" borderColor={projectCardOutline}>
+              <Card maxW="m" border="1px" borderColor={projectCardOutline}>
                 <LinkBox>
                   <LinkOverlay as={Link} to="/learning-club">
                     <CardBody pb="0">
@@ -234,7 +234,7 @@ function HomePage() {
               </Card>
             </GridItem>
             <GridItem>
-              <Card maxW="sm" border="1px" borderColor={projectCardOutline}>
+              <Card maxW="m" border="1px" borderColor={projectCardOutline}>
                 <LinkBox>
                   <LinkOverlay as={Link} to="/mountains-and-rivers">
                     <CardBody pb="0">
@@ -279,7 +279,7 @@ function HomePage() {
           id="contact"
           as="section"
           p={["4", "6", "9"]}
-          maxW="800px"
+          maxW="1000px"
           m="auto"
         >
           <Heading as="h2" size="xl" pb={["1", "2", "4"]}>
