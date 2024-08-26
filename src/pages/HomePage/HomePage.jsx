@@ -100,23 +100,23 @@ function HomePage() {
           align="center"
           justify="center"
           gap="9"
-          maxW="1000px"
+          maxW="900px"
           mx="auto"
           flexWrap={["wrap", "wrap", "nowrap"]}
         >
-          <AspectRatio w={["100%", "75%", "50%"]} ratio={[12 / 7, 12 / 7, 1]}>
+          <AspectRatio w={["100%", "75%", "45%"]} ratio={[12 / 7, 12 / 7, 1]}>
             <Image
               src={profile}
               alt="My Photo"
-              maxW={["100%", "100%", "400px"]}
-              borderRadius="10px"
+              maxW={["100%", "100%", "300px"]}
+              borderRadius="200px"
               objectFit="cover"
               bgColor={imageBg}
               border={imageOutline}
               borderColor="gray.100"
             />
           </AspectRatio>
-          <Box w={["100%", "75%"]}>
+          <Box w={["100%", "100%"]}>
             <Heading as="h2" size="xl" pb={["1", "2", "4"]}>
               Hi there!
             </Heading>
@@ -134,7 +134,7 @@ function HomePage() {
           id="about"
           as="section"
           p={["4", "6", "9"]}
-          maxW="1000px"
+          maxW="900px"
           m="auto"
         >
           <Heading as="h2" size="xl" pb={["1", "2", "4"]} w={["100%", "75%", "100%"]} m="auto">
@@ -188,7 +188,7 @@ function HomePage() {
           id="mywork"
           as="section"
           p={["4", "6", "9"]}
-          maxW="1000px"
+          maxW="900px"
           m="auto"
         >
           <Heading as="h2" size="xl" pb={["4", "6", "9"]}>
@@ -279,7 +279,7 @@ function HomePage() {
           id="contact"
           as="section"
           p={["4", "6", "9"]}
-          maxW="1000px"
+          maxW="900px"
           m="auto"
         >
           <Heading as="h2" size="xl" pb={["1", "2", "4"]}>
