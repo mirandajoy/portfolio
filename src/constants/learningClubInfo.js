@@ -24,8 +24,8 @@ export const aboutAssets = [
     img: landingPage,
     imgWidth: ["100%", null, null, "37.5rem"],
     caption: [
-      "This platform allows people to create groups either locally or remote.",
-      "Then others can discover and join them.",
+      "The Learning Club was created to bring people together over a common curiosity and love of learning.",
+      "It operates like a book club but for podcasts!",
     ],
     captionWidth: ["100%", null, null, "13.75rem"],
     marginTop: ["0", null, null, "8"],
@@ -36,7 +36,10 @@ export const aboutAssets = [
   {
     img: newGroup,
     imgWidth: ["100%", null, null, "37.5rem"],
-    caption: [`A user can start playing simply by entering their player name, no log in is required.`],
+    caption: [
+      "This platform allows people to create groups either locally or remote.",
+      "Then others can discover and join them.",
+    ],
     captionWidth: ["100%", null, null, "12.5rem"],
     marginTop: ["8", null, null, "-6"],
     marginBottom: ["0", null, null, "8"],
