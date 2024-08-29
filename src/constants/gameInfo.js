@@ -1,10 +1,10 @@
-import gameBoard from "../assets/game-board.png";
-import gameSetup from "../assets/game-setup.png";
-import logo from "../assets/game-logo.svg";
-import gameHook from "../assets/game-hook.png";
 import gameAlgo from "../assets/game-algo.png";
-import gameSockets from "../assets/game-sockets.png";
+import gameBoard from "../assets/game-board.png";
+import gameHook from "../assets/game-hook.png";
+import logo from "../assets/game-logo.svg";
 import gameReact from "../assets/game-react.png";
+import gameSetup from "../assets/game-setup.png";
+import gameSockets from "../assets/game-sockets.png";
 
 export const brand = {
   brandColor: "#328F73",
@@ -14,7 +14,7 @@ export const brand = {
 export const hero = {
   logo: logo,
   title: "Zen Trails",
-  primaryCtaLink: "https://mountains-and-rivers.netlify.app",
+  primaryCtaLink: "http://mountains-and-rivers-game.s3-website.us-east-2.amazonaws.com/",
   secondaryCtaLink: "https://github.com/mirandajoy/mountains-and-rivers",
 };
 
