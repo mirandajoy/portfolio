@@ -35,14 +35,9 @@ function ProjectLayout({ brand, hero, aboutAssets, howAssets }) {
             {hero.title}
           </Heading>
         </Box>
-        <Flex paddingTop="2" direction={["column", "row"]} gap="2">
-          <Button variant="solid" as="a" href={hero.primaryCtaLink} target="_blank">
-            Explore the Live Product
-          </Button>
-          <Button variant="outline" as="a" href={hero.secondaryCtaLink} target="_blank">
-            View the Source Code
-          </Button>
-        </Flex>
+        <Button variant="outline" as="a" marginTop="2" href={hero.secondaryCtaLink} target="_blank">
+          View the Source Code
+        </Button>
       </Flex>
       <Box as="section" paddingInline="4" maxW={["500", null, "600", "1280"]} m="auto">
         <Heading
@@ -139,14 +134,9 @@ function ProjectLayout({ brand, hero, aboutAssets, howAssets }) {
         <Heading color={headingColor} fontFamily="Rock Salt" textAlign="center">
           Explore For Yourself
         </Heading>
-        <Flex flexDirection={["column", "row"]} gap="2">
-          <Button variant="solid" as="a" href={hero.primaryCtaLink} target="_blank">
-            Explore the Live Product
-          </Button>
-          <Button variant="outline" as="a" href={hero.secondaryCtaLink} target="_blank">
-            View the Source Code
-          </Button>
-        </Flex>
+        <Button variant="outline" as="a" href={hero.secondaryCtaLink} target="_blank">
+          View the Source Code
+        </Button>
       </Flex>
     </>
   );
