@@ -108,8 +108,17 @@ function Header({ bgColor, color, visibleSection, logoColor }) {
           </IconButton>
         </HStack>
         <Menu>
-          <MenuButton as={Button} display={["block", "block", "none"]} pt={0}>
-            <ChevronDownIcon boxSize={10} />
+          <MenuButton
+            as={Button}
+            display={["block", "block", "none"]}
+            pt={0}
+            px={1}
+            borderColor={textColour}
+            backgroundColor="transparent"
+            _hover={{ opacity: 0.5 }}
+            _active={{ opacity: 0.5 }}
+          >
+            <ChevronDownIcon boxSize={10} color={textColour} />
           </MenuButton>
           <MenuList color={menuColor}>
             <MenuItem as={HashLink} to="/#home">
