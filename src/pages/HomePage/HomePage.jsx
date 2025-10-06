@@ -91,7 +91,7 @@ function HomePage() {
       <Box pos="fixed" top="0" w="100%" zIndex="100" t="0">
         <Header bgColor={headerBg} color={headerColor} visibleSection={visibleSection} logoColor={logoColor} />
       </Box>
-      <Box mb={["4", "6", "10"]} mt={["80px", "100px", "168px"]}>
+      <Box mb={["4", "6", "10"]} mt={["80px", "100px", "168px"]} w="100%">
         <Flex
           ref={(el) => (sectionRef.current["home"] = el)}
           id="home"
@@ -104,11 +104,11 @@ function HomePage() {
           mx="auto"
           flexWrap={["wrap", "wrap", "nowrap"]}
         >
-          <AspectRatio w={["100%", "75%", "45%"]} ratio={[12 / 7, 12 / 7, 1]}>
+          <AspectRatio w={["45%", "45%", "45%"]} ratio={1}>
             <Image
               src={profile}
               alt="My Photo"
-              maxW={["100%", "100%", "300px"]}
+              maxW={["300px", "300px", "300px"]}
               borderRadius="200px"
               objectFit="cover"
               bgColor={imageBg}
@@ -116,7 +116,7 @@ function HomePage() {
               borderColor="gray.100"
             />
           </AspectRatio>
-          <Box w={["100%", "100%"]}>
+          <Box w={["100%", "75%", "100%"]}>
             <Heading as="h2" size="xl" pb={["1", "2", "4"]}>
               Hi there!
             </Heading>
@@ -171,13 +171,18 @@ function HomePage() {
             >
               <Tag>HTML</Tag>
               <Tag>CSS</Tag>
+              <Tag>Tailwind</Tag>
               <Tag>Sass</Tag>
               <Tag>JavaScript</Tag>
+              <Tag>Python</Tag>
               <Tag>React</Tag>
+              <Tag>Redux</Tag>
               <Tag>React Router</Tag>
               <Tag>Typescript</Tag>
               <Tag>Node.js</Tag>
               <Tag>Express</Tag>
+              <Tag>Django</Tag>
+              <Tag>Postgres</Tag>
               <Tag>MySQL</Tag>
             </Flex>
           </Flex>
@@ -190,11 +195,12 @@ function HomePage() {
           p={["4", "6", "9"]}
           maxW="900px"
           m="auto"
+          w={["100%", "75%", "100%"]}
         >
           <Heading as="h2" size="xl" pb={["4", "6", "9"]}>
             Projects
           </Heading>
-          <Grid templateColumns="repeat(2, 1fr)" gap={4}>
+          <Grid templateColumns={["repeat(1, 1fr)", "repeat(1, 1fr)", "repeat(2, 1fr)"]} gap={4}>
             <GridItem>
               <Card maxW="m" border="1px" borderColor={projectCardOutline}>
                 <LinkBox>
@@ -281,6 +287,7 @@ function HomePage() {
           p={["4", "6", "9"]}
           maxW="900px"
           m="auto"
+          w={["100%", "75%", "100%"]}
         >
           <Heading as="h2" size="xl" pb={["1", "2", "4"]}>
             Contact
