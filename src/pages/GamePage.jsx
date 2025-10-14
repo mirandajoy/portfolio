@@ -1,8 +1,6 @@
 import { useEffect } from "react";
-import { brand, hero, aboutAssets, howAssets } from "../../constants/gameInfo.js";
-import ProjectLayout from "../../components/ProjectLayout/ProjectLayout";
-
-import "./GamePage.scss";
+import { brand, hero, aboutAssets, howAssets } from "../constants/gameInfo.js";
+import ProjectLayout from "../components/ProjectLayout";
 
 function GamePage() {
   useEffect(() => {

@@ -1,7 +1,6 @@
 import { useEffect } from "react";
-import { brand, hero, aboutAssets, howAssets } from "../../constants/learningClubInfo.js";
-import "./LearningClubPage.scss";
-import ProjectLayout from "../../components/ProjectLayout/ProjectLayout.jsx";
+import { brand, hero, aboutAssets, howAssets } from "../constants/learningClubInfo.js";
+import ProjectLayout from "../components/ProjectLayout.jsx";
 
 function LearningClubPage() {
   useEffect(() => {

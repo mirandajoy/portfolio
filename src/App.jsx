@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Footer from "./components/Footer/Footer";
-import GamePage from "./pages/GamePage/GamePage";
-import HomePage from "./pages/HomePage/HomePage";
-import LearningClubPage from "./pages/LearningClubPage/LearningClubPage";
-import TheScorePage from "./pages/TheScorePage/TheScorePage";
+import Footer from "./components/Footer";
+import GamePage from "./pages/GamePage";
+import HomePage from "./pages/HomePage";
+import LearningClubPage from "./pages/LearningClubPage";
+import TheScorePage from "./pages/TheScorePage";
 
 import "./App.scss";
 

@@ -1,9 +1,7 @@
 import { Box, Button, Flex, Heading, Image, Text, useColorModeValue } from "@chakra-ui/react";
 
-import Carousel from "../../components/Carousel/Carousel";
-import Header from "../../components/Header/Header";
-
-import "./ProjectLayout.scss";
+import Carousel from "./Carousel";
+import Header from "./Header";
 
 function ProjectLayout({ brand, hero, aboutAssets, howAssets }) {
   const headerBgColor = useColorModeValue(brand.brandLight, "gray.900");

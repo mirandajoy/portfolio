@@ -18,8 +18,6 @@ import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { HashLink } from "react-router-hash-link";
 
-import "./Header.scss";
-
 function Header({ bgColor, color, visibleSection, logoColor }) {
   const { colorMode, toggleColorMode } = useColorMode();
   const menuColor = useColorModeValue("black", "white");

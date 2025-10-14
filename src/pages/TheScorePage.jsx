@@ -1,9 +1,8 @@
-import ProjectLayout from "../../components/ProjectLayout/ProjectLayout";
-import homePage from "../../assets/score-home.png";
-import articlePage from "../../assets/score-article.png";
-import heroMockup from "../../assets/score-mockup.jpg";
+import ProjectLayout from "../components/ProjectLayout";
+import homePage from "../assets/score-home.png";
+import articlePage from "../assets/score-article.png";
+import heroMockup from "../assets/score-mockup.jpg";
 import { useEffect } from "react";
-import "./TheScorePage.scss";
 
 function TheScorePage() {
   const summary = [

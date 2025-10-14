@@ -23,13 +23,11 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-import resume from "../../../public/miranda_neerhof_resume.pdf";
-import gameMockup from "../../assets/game-mockup-sq.jpg";
-import learningClubMockup from "../../assets/learning-club-sq.jpg";
-import profile from "../../assets/profile-transparent.png";
-import Header from "../../components/Header/Header";
-
-import "./HomePage.scss";
+import resume from "../../public/miranda_neerhof_resume.pdf";
+import gameMockup from "../assets/game-mockup-sq.jpg";
+import learningClubMockup from "../assets/learning-club-sq.jpg";
+import profile from "../assets/profile-transparent.png";
+import Header from "../components/Header";
 
 const sections = [
   { id: "home", label: "Home" },

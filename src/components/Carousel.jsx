@@ -16,8 +16,6 @@ import {
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
-import "./Carousel.scss";
-
 function Carousel({ carouselList, openCarousel, children }) {
   const [activeItem, setActiveItem] = useState(0);
   const backBtnDisplay = activeItem === 0 ? "hidden" : "visible";
