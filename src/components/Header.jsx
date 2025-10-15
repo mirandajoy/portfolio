@@ -37,8 +37,8 @@ function Header({ bgColor, color, visibleSection, logoColor }) {
   }, [visibleSection]);
 
   return (
-    <Box as="header">
-      <Flex align="center" justify="space-between" p={["4", "5", "5"]} bgColor={bgColor} color={textColour}>
+    <Box as="header" h="10">
+      <Flex align="center" justify="space-between" p={["5", "5", "5"]} bgColor={bgColor} color={textColour}>
         <Heading
           as="h3"
           size="md"
@@ -87,7 +87,7 @@ function Header({ bgColor, color, visibleSection, logoColor }) {
             color={textColour ? textColour : "gray.50"}
             bgColor={currentHash === "#mywork" ? "brand.600" : ""}
           >
-            Projects
+            My Work
           </ChakraLink>
           <ChakraLink
             as={HashLink}
@@ -126,7 +126,7 @@ function Header({ bgColor, color, visibleSection, logoColor }) {
               About
             </MenuItem>
             <MenuItem as={HashLink} to="/#mywork">
-              Projects
+              My Work
             </MenuItem>
             <MenuItem as={HashLink} to="/#contact">
               Contact

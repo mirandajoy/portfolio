@@ -1,37 +1,38 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Stack, VStack, Heading, Text } from "@chakra-ui/react";
 import SkillsBlock from "./SkillsBlock";
 
 function AboutSection() {
   return (
-    <>
-      <Heading as="h2" size="xl" pb={["1", "2", "4"]} w={["100%", "75%", "100%"]} m="auto">
+    <Stack spacing="8" align={["center", null, null, null, "flex-start"]}>
+      <Heading as="h2" size="xl">
         About Me
       </Heading>
-      <Flex
+      <VStack
         align="flex-start"
-        justify={["center", "center", "space-between"]}
-        gap={["4", "4", "9"]}
-        flexWrap={["wrap", "wrap", "nowrap"]}
+        justify={["center", null, null, null, "space-between"]}
+        gap="12"
+        w="100%"
+        flexDirection={["column", null, null, null, "row"]}
       >
-        <Box flexBasis={["100%", "75%", "60%"]}>
-          <Text fontSize="md" marginY="3">
-            I've been working in the tech industry for the past 7 years. I got my start as a UX Designer and have worked
-            for the past 5+ years as a Product Manager.
+        <Stack
+          spacing="6"
+          textAlign={["center", null, null, null, "left"]}
+          justify={["center", null, null, null, "flex-start"]}
+          w={["100%", null, null, null, "50%"]}
+          maxW="440px"
+          mx={["auto", null, null, null, "0"]}
+        >
+          <Text>
+            I bring strong problem-solving skills and a deep understanding of building scalable, user-focused products.
           </Text>
-          <Text fontSize="md" marginY="3">
-            Over the years, I have built out various technical skills from building React Components to support UI
-            implementation, to researching APIs to uncover solution opportunities, and becoming proficient with SQL to
-            drive problem-discovery and track impact.
+          <Text>
+            As a naturally curious person and a fast learner, I am highly adaptable and eager to solve new problems.
           </Text>
-          <Text fontSize="md" marginY="3">
-            Completing Brainstation's intensive full-stack engineering bootcamp allowed me to bridge my various skills
-            together and deepen my capabilities. I am excited to leverage my well-rounded skillset to contribute to a
-            team as a Software Engineer.
-          </Text>
-        </Box>
+          <Text>I thrive in small to mid-sized, collaborative teams that care about shipping great products.</Text>
+        </Stack>
         <SkillsBlock />
-      </Flex>
-    </>
+      </VStack>
+    </Stack>
   );
 }
 

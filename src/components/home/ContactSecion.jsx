@@ -1,20 +1,20 @@
-import { Box, Link as ChakraLink, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Link as ChakraLink, Flex, Heading, Text, Stack } from "@chakra-ui/react";
 
 function ContactSection() {
   return (
-    <>
-      <Heading as="h2" size="xl" pb={["1", "2", "4"]}>
+    <Stack spacing="8">
+      <Heading as="h2" size="xl">
         Contact
       </Heading>
       <Flex justify="space-between">
-        <Box>
-          <Text fontSize="md" marginY="3">
+        <Stack spacing="3">
+          <Text fontSize="md">
             You can reach me at:{" "}
             <ChakraLink href="mailto:miranda.neerhof@gmail.com" isExternal fontWeight="semibold">
               miranda.neerhof@gmail.com
             </ChakraLink>
           </Text>
-          <Text fontSize="md" marginY="3">
+          <Text fontSize="md">
             Connect with me on:
             <ChakraLink href="https://www.linkedin.com/in/mirandaneerhof/" isExternal px="2" fontWeight="semibold">
               LinkedIn
@@ -24,7 +24,7 @@ function ContactSection() {
               GitHub
             </ChakraLink>
           </Text>
-        </Box>
+        </Stack>
         {/* <Box>
               <Button
                 as="a"
@@ -38,7 +38,7 @@ function ContactSection() {
               </Button>
             </Box> */}
       </Flex>
-    </>
+    </Stack>
   );
 }
 

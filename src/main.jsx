@@ -36,6 +36,7 @@ const colors = {
     900: "#050a19",
   },
   gray: {
+    20: "#fafafa",
     50: "#e8e8e8",
     100: "#d1d2d2",
     200: "#babbbb",
@@ -43,7 +44,7 @@ const colors = {
     400: "#757777",
     500: "#5e6060",
     600: "#474949",
-    700: "#303333",
+    700: "#252727",
     800: "#191c1c",
     900: "#020303",
   },
@@ -57,9 +58,9 @@ const config = {
 const styles = {
   global: (props) => ({
     body: {
-      fontFamily: "Open Sans",
-      bg: mode("gray.50", "gray.800")(props),
-      lineHeight: "base",
+      fontFamily: "Roboto",
+      bg: mode("gray.20", "gray.800")(props),
+      lineHeight: "tall",
     },
     "*::placeholder": {
       color: mode("brand.400", "whiteAlpha.400")(props),

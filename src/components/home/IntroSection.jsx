@@ -1,37 +1,34 @@
-import { AspectRatio, Box, Flex, Heading, Image, Text, useColorModeValue } from "@chakra-ui/react";
+import { AspectRatio, Stack, VStack, Heading, Image, Text, useColorModeValue, Center } from "@chakra-ui/react";
 
 import profile from "../../assets/profile-transparent.png";
 
 function IntroSection() {
   const imageOutline = useColorModeValue("1px solid", "none");
-  const imageBg = useColorModeValue("#7086c31a", "#ffffffc9");
+  const imageBg = useColorModeValue("secondary.100", "secondary.200");
 
   return (
-    <Flex align="center" justify="center" gap="9" flexWrap={["wrap", "wrap", "nowrap"]}>
-      <AspectRatio w={["45%", "45%", "45%"]} ratio={1}>
+    <VStack gap={["12", "12", "12", "16"]} flexDirection={["column", null, null, null, "row"]} justifyContent="center">
+      <AspectRatio w={["15rem", null, null, "18.75rem"]} ratio={1}>
         <Image
           src={profile}
           alt="My Photo"
-          maxW={["300px", "300px", "300px"]}
-          borderRadius="200px"
+          borderRadius="full"
           objectFit="cover"
           bgColor={imageBg}
           border={imageOutline}
-          borderColor="gray.100"
+          borderColor="secondary.200"
         />
       </AspectRatio>
-      <Box w={["100%", "75%", "100%"]}>
-        <Heading as="h2" size="xl" pb={["1", "2", "4"]}>
+      <Stack spacing="6" align={["center", null, null, null, "flex-start"]} maxW={["18.75rem", "100%"]}>
+        <Heading as="h2" size="xl">
           Hi there!
         </Heading>
-        <Text fontSize="md" marginY="3">
-          I'm Miranda, a Software Engineer and former Senior Product Manager.
-        </Text>
-        <Text fontSize="md" marginY="3">
-          I am driven by solving real-world user problems with collaborative teams.
-        </Text>
-      </Box>
-    </Flex>
+        <Stack spacing="3" textAlign={["center", null, null, null, "left"]} maxW={["18.75rem", null, "100%"]}>
+          <Text fontSize="md">I'm Miranda, a Software Engineer and former Senior Product Manager.</Text>
+          <Text fontSize="md">I am driven by solving real-world user problems with collaborative teams.</Text>
+        </Stack>
+      </Stack>
+    </VStack>
   );
 }
 
